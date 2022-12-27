@@ -1,0 +1,346 @@
+:root{
+    --orange1: #F9751E;
+    --white: white;
+    --maroon1: #5D0A0D;
+    --black: #000000;
+    --black2: #171717;
+    --lbrown: #f6eee4;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Comfortaa, sans-serif;
+    font-size: 14.5px;
+    color: var(--black);
+}
+
+.login-btn{
+
+}
+.hero{
+    background: var(--orange1) url(../img/header-bg.png) left top;
+    padding: 0 0 55px;
+}
+.patern-bg2{
+     padding: 40px 0;
+    background: var(--lbrown) url(../img/yoga-vidya-bg.png) left top;
+}
+
+.title h2{
+	margin-bottom: 15px;
+}
+
+.yoga-class{
+    padding: 90px 0 150px;
+}
+.yoga-class .img-wrapper{
+    position: relative;
+}
+.yoga-class .img-wrapper::after{
+    content: url(../img/floater1.png);
+    position: absolute;
+    right: -18%;
+    bottom: -15%;
+}
+
+
+.know.btn{
+    min-width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--maroon1);
+    color: var(--white);
+}
+.title h1{
+    font-size: 50px;
+    line-height: 75px;
+    font-family: Comfortaa;
+    color: var(--orange1);
+    margin-bottom: 0;
+}
+
+.in-school{
+    padding: 50px 0;
+    position: relative;
+}
+.in-school::before{
+    content: url(../img/left-floater.png);
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+.in-school .title h2 {
+    line-height: 70px;
+}
+.title h2{
+    font-size: 38px;
+    line-height: 42px;
+    font-weight: 700;
+    color: var(--orange1);
+    margin-bottom: 0;
+}
+.in-school .sub-title p{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--black2);
+}
+.in-school .pic-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+.in-school .caption-wrapper p{
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 700;
+}
+.in-school .pic-wrapper .img-wrapper{
+    margin-bottom: 1rem;
+}
+.appreciation{
+    
+}
+.appreciation .title h2{
+    line-height: 70px;
+}
+.appreciation .pic-wrapper{
+    display: flex;   
+    max-width: 90%;
+    margin: auto;
+}
+.appreciation .pic-wrapper .left-side{
+    flex: 0 1 40%;
+    text-align: center;
+}
+.appreciation .pic-wrapper .right-side{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 60%;
+    justify-content: space-evenly;
+}
+.appreciation .pic-wrapper .right-side > .pic{
+    flex: 0 1 50%;
+    text-align: center;
+}
+
+.destination{
+background: black;
+}
+.float-left{
+	float: left;
+}
+.destination h2{
+	color: #f9751e;
+    position: absolute;
+    margin-top: 25px;
+    left: 34%;
+    z-index: 9;
+}
+.destination .col-lg-3{
+	position: relative;
+    z-index: 2;
+    border-right: 1px solid rgba(256,256,256,0.5);
+    padding: 0;
+}
+.destination .row:nth-child(2){
+	position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    background: #000;
+    margin:0;
+}
+.destination .single{
+    display: flex;
+    height: 600px;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+    color: #fff;
+    position: relative;
+    z-index: 9;
+}
+
+.overlay{
+	z-index: 1;
+    background: rgba(0,0,0,0.3);
+}
+.destination .single:hover .content{
+	max-height: 100%;
+    transform: scaleY(1);
+     overflow: visible;
+}
+.destination .single .content{ 
+	overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.2s ease;
+    max-height: 0;
+    }
+.destination .single .content p{ }
+.destination .img-wrap{
+
+	    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+ }
+.destination .col-lg-3:hover .img-wrap img{ 
+visibility: visible;
+    opacity: 0.8;
+}
+.destination .img-wrap img{ 
+    visibility: hidden;
+    opacity: 0;
+    }
+
+.master.card{
+	border: none;
+    padding: 40px 5px;
+    border-radius: 50px 0px 50px 0px;
+}
+.master .img-wrapper img{
+
+}
+.master h4{
+	font-size: 18px;
+    margin: 20px 0 10px;
+}
+
+.master p{
+	color: orange;
+    text-shadow: -1px 1px 1px #ccc;
+}
+
+.master a{
+	margin-right: 10px;
+}
+
+.master a img{
+	
+}
+
+.base{
+
+}
+.blog{
+position: relative;
+}
+.blog .pic-wrapper img{
+        width: 100%;
+}
+.blog .text{
+	position: absolute;
+    bottom: 1px;
+    padding: 30px;
+    background: rgb(0 0 0 / 18%);
+    width: 100%;
+    border-radius: 0px 0 20px 0;
+}
+.blog .text h5{
+	color: #fff;
+    font-size: 1.5rem;
+}
+.blog .text p{
+	    color: #fff;
+    font-size: 16px;
+}
+.blog .text a.readmore{
+	background: #fff;
+    text-align: center;
+    border-radius: 15px 0px 15px 0px;
+}
+.contact{
+
+}
+.contact .contact-wrapper{
+	display: flex;
+    background: #fff;
+    padding: 20px;
+    border-radius: 30px 0;
+    box-shadow: 0px 2px 10px -6px #000;
+}
+.contact .title{}
+.contact .sub-title{}
+.contact .contactus{}
+
+footer p{
+    color: #000;
+}
+footer{
+	background: #f6f0e4 !important;
+	padding: 50px 0 0;
+}
+.footer-left{}
+.footer-center{}
+.footer-right{}
+footer a{
+	color: #000;
+}
+footer h5{
+	color: orange;
+    font-size: 14px;
+    font-weight: 600;
+}
+.social-links a{
+    margin-right:10px;
+}
+
+.hero-page{
+background: url('../img/slider.png'); 
+    height: 500px;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.overlay{
+/*width: 100%;
+    filter: blur(20px);
+    background: #1919191f;
+    display: inline-block;
+    position: absolute;
+    height: 500px;
+    z-index: 1;*/
+}
+.hero-page h1{
+padding: 100px 0 20px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: -2px 1px 0px #000;
+}
+
+.hero-page p{
+
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: -2px 1px 0px #000;
+}
+.page-section{
+
+}
+
+.form{
+padding: 40px 30px;
+    background: #ed5426;
+    border-radius: 20px 0 20px 0;
+}
+.form-group{
+    margin-bottom: 20px;
+}
+.form-control{
+       padding: 10px 14px;
+    border-radius: 10px 0 10px 0;
+    box-shadow: none;
+    font-size: 14px;
+}
+.standard-btn{
+ background: #fdbc7c url(../img/floater1.png) !important;
+    background-size: 100px !important;
+    background-repeat: no-repeat !important;
+    border: none;
+    color: #212121 !important;
+}
