@@ -1,116 +1,45 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
-   <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+  <div
+    class="container-fluid container-xl d-flex align-items-center justify-content-between"
+  >
+    <a href="" class="logo d-flex align-items-center">
+      <img src="assets/img/logo.png" alt="" />
+    </a>
 
-     <a href="" class="logo d-flex align-items-center">
-       
-       <img src="assets/img/logo.png" alt="">
-       
-     </a>
-
-     <nav id="navbar" class="navbar">
-       <ul>
-         <li><a href="">About</a></li>
-         
-        <li class="dropdown">
-          <a href=""><span>Yoga Teacher Training</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-          <ul>
-             <!-- <li><a href="">Get certified in rishikesh</a></li> -->
-             <li class="dropdown">
-                <a href="#"><span>Get certified in rishikesh</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                   <li><a href="#">100 Hour Yoga TTC</a></li>
-                   <li><a href="#">200 Hour Yoga TTC</a></li>
-                   <li><a href="#">300 Hour Yoga TTC</a></li>
-                   <li><a href="#">Formacion Intensiva de Yoga <br>en Rishikesh India</a></li>
-                </ul>
-             </li>
-             <li class="dropdown">
-                <a href="#"><span>Get certified in Kerala</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                   <li><a href="#">200 Hour Yoga TTC</a></li>
-                   <li><a href="#">300 Hour Yoga TTC</a></li>
-                </ul>
-             </li>
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a href="">About</a></li>
+        <li class="dropdown" *ngFor="let cat of categoryList">
+          <a href=""
+            ><span>{{cat.categoryname}}</span>
+            <i class="bi bi-chevron-down dropdown-indicator"></i
+          ></a>
+          <ul *ngIf="cat.subcategory[0].course.length">
+            <li class="dropdown" *ngFor="let subcat of cat.subcategory">
+              <a href="#"
+                ><span>{{subcat.subcategoryname}}</span>
+                <i class="bi bi-chevron-right dropdown-indicator"></i
+              ></a>
+              <ul>
+                <li *ngFor="let course of subcat.course">
+                  <a routerLink="/course/{{course.slug}}">{{course.courseName}}</a>
+                </li>
+              </ul>
+            </li>
           </ul>
-       </li>
-       <li class="dropdown">
-          <a href=""><span>Online Yoga workshops</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-          <ul>
-             <li><a href="">Breath Detox Yoga</a></li>
-             <li><a href="">Foundations of Spirituality</a></li>
-             <li><a href="">Hip Opening Workshop</a></li>
-             <li><a href="">200 Hours Yoga TTC</a></li>
-             <li><a href="">Yogic Scriptures Study</a></li>
-           
+          <ul *ngIf="!cat.subcategory[0].course.length">
+            <li *ngFor="let subcat of cat.subcategory">
+              <a routerLink="/course/{{subcat.slug}}">{{subcat.subcategoryname}}</a>
+            </li>
           </ul>
-       </li>
-          <li class="dropdown">
-            <a href=""><span>Yoga Retreats</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-               <li><a href="">Yoga Retreats in RISHIKESH</a></li>
-               <li><a href="">Yoga Retreats in KERALA </a></li>
-             
-            </ul>
-         </li>
-          <li class="dropdown">
-            <a href=""><span>More Yoga Classes</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-           <ul>
-  
-  <li  class="">
-     <a href="https://www.yogavidyaschool.com/yoga-courses/pranic-purification">
-     Pranic Purification
-     </a>
-  </li>
-  <li >
-     <a href="https://www.yogavidyaschool.com/yoga-courses/21-days-ashtanga-yoga-immersion">
-     21 Days Ashtanga Yoga Immersion
-     </a>
-  </li>
-  <li >
-     <a href="https://www.yogavidyaschool.com/yoga-courses/pranayama-therapy-course-online">
-     Pranayama Therapy Course Online
-     </a>
-  </li>
-  <li >
-     <a href="https://www.yogavidyaschool.com/yoga-courses/adjustment-amp-alignment-level-1">
-     Adjustment & Alignment Level 1
-     </a>
-  </li>
-  <li >
-     <a href="https://www.yogavidyaschool.com/yoga-courses/adjustment-amp-alignment-level-2">
-     Adjustment & Alignment Level 2
-     </a>
-  </li>
-  <li >
-     <a href="https://www.yogavidyaschool.com/yoga-courses/yoga-teacher-training-in-india">
-     Yoga Teacher Training in India
-     </a>
-  </li>
-  <li >
-     <a href="https://www.yogavidyaschool.com/yoga-courses/drop-in-yoga-classes">
-     Drop-in Yoga Classes
-     </a>
-  </li>
-  <li >
-     <a href="https://www.yogavidyaschool.com/yoga-courses/yoga-for-weight-loss">
-     Yoga for Weight Loss
-     </a>
-  </li>
-</ul>
-         </li>
+        </li>
+        <li><a href="contact">Contact</a></li>
+      </ul>
+    </nav>
 
-         
-         <li><a href="contact">Contact</a></li>
-       </ul>
-     </nav>
-
-     <div class="position-relative">
-       <a href="#" class="mx-2 login-btn">
-       Login</a>
-       <i class="bi bi-list mobile-nav-toggle"></i>
-
-     </div>
-
-   </div>
-
- </header>
+    <div class="position-relative">
+      <a href="#" class="mx-2 login-btn"> Login</a>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </div>
+  </div>
+</header>
