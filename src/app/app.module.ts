@@ -7,7 +7,8 @@ import { HeaderComponent } from './includes/header/header.component';
 import { FooterComponent } from './includes/footer/footer.component';
 import { IndexComponent } from './index/index.component';
 import { ViewCourseComponent } from './includes/view-course/view-course.component';
-
+import { NgImageSliderModule } from 'ng-image-slider';
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,9 @@ import { ViewCourseComponent } from './includes/view-course/view-course.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgImageSliderModule,
+    NgxUsefulSwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
