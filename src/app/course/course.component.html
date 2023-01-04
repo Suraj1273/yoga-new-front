@@ -136,4 +136,77 @@
       </div>
     </div>
   </section>
+
+  <section class="upcoming-event">
+    <div class="container">
+      <div class="section-title">
+        <h3 class="mb-5">Upcoming Events</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="event-details" *ngFor="let fee of course.feeInfo">
+            <div class="event-detail-heading">
+              <h4 class="orange">{{fee.title}}</h4>
+            </div>
+            <div class="discount-rate">
+              <div class="room-rate">
+                <p><span>
+                  <b>{{fee.feeText}}</b>
+                </span>
+              Fees start from
+              </p>
+              <div class="d-flex amount-fee">
+                <h4>{{fee.currency}} {{fee.amount}}</h4>
+                <p>
+                  <br>
+                  <s>{{fee.currency}} {{fee.originalAmount}}</s>
+                </p>
+              </div>
+              </div>
+            </div>
+            <!-- <div class="details-wrp">
+              <div class="events-heading">
+                 <h4 class="orange">What is Included in Course Fees</h4>
+              </div>
+              <ul class="objectives-list clearfix">
+                 <div class="col-xs-6">
+                    <li>28 Days Accommodation</li>
+                    <li>1 book Yoga Mala ("by k. Pattabhi Jois")
+                    </li>
+                    <li>1 Pen and note book</li>
+                    <li>Attached bathrooms</li>
+                    <li>1 book Asana Pranayama Mudra Bandha ("by
+                       Swami Satyananda Saraswati")</li>
+                 </div>
+                 <div class="col-xs-6">
+                    <li>Pure vegetarian meals</li>
+                    <li>Satkarma cleansing items</li>
+                    <li>T-Shirt</li>
+                    <li>Yoga Alliance Certification</li>
+                    <li>One bag</li>
+                    <li>River rafting</li>
+                 </div>
+              </ul>
+           </div> -->
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="event-container-div">
+            <div class="event-div">
+               <p class="orange"><b>START DATE</b></p>
+               <p class="orange"><b>END DATE</b></p>
+               <p class="orange"><b>AVAILABILITY</b></p>
+            </div>
+            <div class="event-div" *ngFor="let event of course.upcomingEventInfo">
+               <a href="#">
+                  <p>{{event.startDate}}</p>
+                  <p>{{event.endDate}}</p>
+                  <p class="bg-dark-shade">{{event.seat}} SPOT LEFT</p>
+               </a>
+            </div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>

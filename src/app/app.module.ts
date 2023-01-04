@@ -9,13 +9,15 @@ import { IndexComponent } from './index/index.component';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { CourseComponent } from './course/course.component';
+import { TestStripeComponent } from './test-stripe/test-stripe.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     IndexComponent,
-    CourseComponent
+    CourseComponent,
+    TestStripeComponent
   ],
   imports: [
     BrowserModule,
