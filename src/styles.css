@@ -16,3 +16,6 @@ ul {
     display: flex;
     gap: 10px;
   }
+  .orange{
+    color: #F9751E;
+  }
