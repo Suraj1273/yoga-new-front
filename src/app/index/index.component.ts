@@ -15,6 +15,7 @@ export class IndexComponent {
     },
     spaceBetween: 30
   };
+  
 
    
 }
