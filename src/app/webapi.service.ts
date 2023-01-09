@@ -5,8 +5,9 @@ import {HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class WebapiService {
-  // private url = 'http://localhost:3000/';
-  private url = 'http://34.203.244.83:3000/';
+  private url = 'http://localhost:3000/';
+  // private url = 'http://34.203.244.83:3000/';
+  public imageUrl = "http://localhost:3000/public/images/";
 
 
   constructor(private http:HttpClient) { }
@@ -22,5 +23,16 @@ export class WebapiService {
    saveInquiry(data:any){
     return this.http.post(this.url+"api/v1/inquiryEmail",data);
 
+   }
+
+    getSliders(id =""){
+    return this.http.get(this.url+"api/v1/getSlider"+id);
+   }
+
+   getHomeBlog(data:any){
+    return this.http.post(this.url+"api/v1/getHomeBlog",data);
+   }
+   getHomeMentors(data:any){
+    return this.http.post(this.url+"api/v1/getHomeMentors",data);
    }
 }
