@@ -17,35 +17,29 @@
       <div class="row">
         <div class="col-lg-8 mb-5">
           <h2 class="section-title">About {{course.coursetitle}}</h2>
-          <p innerHtml="{{course.courseDesc}}">
+          <p [innerHtml]="course.courseDesc | safeHtml:'html'">
           </p>
         </div>
         <div class="col-lg-4">
           <div class="form-wrap form">
-            <form class="apply-now">
+            <form class="apply-now" #inquiry ="ngForm" (ngSubmit)="saveInquiry(inquiryData)">
                 <div class="form-group">
-                 <input type="text" class="form-control" placeholder="Your Name" name="" id="" required="">
+                 <input type="text" class="form-control" placeholder="Your Name" name="name" [(ngModel)]="inquiryData.name" id="" required="">
                 </div>
                 <div class="form-group">
-                 <input type="email" class="form-control right-apply-name" placeholder="Email Address" name="" id="" required="">
+                 <input type="email" class="form-control right-apply-name" placeholder="Email Address"  name="email" [(ngModel)]="inquiryData.to" id="" required="">
                 </div>
                 <div class="form-group">
-                 <select class="form-control calender-wp" name="selCourseDate" id="selCourseDate" required="">
-                    <option value="select">Select Course Date</option>
-                    <option value="03 Jan - 17 Jan 2023">03 Jan - 17 Jan 2023</option>
-                    <option value="03 Feb - 17 Feb 2023">03 Feb - 17 Feb 2023</option>
-                    <option value="03 Mar - 17 Mar 2023">03 Mar - 17 Mar 2023</option>
-                    <option value="03 Apr - 17 Apr 2023">03 Apr - 17 Apr 2023</option>
-                    <option value="03 May - 17 May 2023">03 May - 17 May 2023</option>
-                    <option value="03 Jun - 17 Jun 2023">03 Jun - 17 Jun 2023</option>
-                    <option value="03 Jul - 17 Jul 2023">03 Jul - 17 Jul 2023</option>
-                    <option value="03 Aug - 17 Aug 2023">03 Aug - 17 Aug 2023</option>
-                    <option value="03 Sep - 17 Sep 2023">03 Sep - 17 Sep 2023</option>
-                    <option value="03 Oct - 17 Oct 2023">03 Oct - 17 Oct 2023</option>
+                 <select class="form-control calender-wp" name="selCourseDate" id="selCourseDate"  name="courseDate" [(ngModel)]="inquiryData.courseDate" required="">
+                    <option value="undefined">Select Course Date</option>
+                    <option *ngFor="let date of course.upcomingEventInfo" value="{{date.startDate}} ~ {{date.endDate}}">{{date.startDate}} - {{date.endDate}}</option>
                  </select>
                   </div>
                   <div class="form-group">
-                    <textarea class="form-control" placeholder="Your Message" name="" id="" required="" rows="2"></textarea>
+                    <input type="number" class="form-control" placeholder="Your contact" name="contact" [(ngModel)]="inquiryData.contactNumber" required="">
+                   </div>
+                  <div class="form-group">
+                    <textarea class="form-control" placeholder="Your Message"  name="message" [(ngModel)]="inquiryData.message" id="" required="" rows="2"></textarea>
                   </div>
                   <div class="form-group d-grid">
                     <button type="submit" class="btn btn-primary standard-btn">Enquiry</button>
@@ -62,7 +56,7 @@
       <div class="row">
         <div class="col-lg-8 mb-5" *ngFor="let cont of course.content">
           <h2 class="section-title">{{cont.title}}</h2>
-          <p innerHtml="{{cont.para}}">
+          <p [innerHtml]="cont.para | safeHtml: 'html'">
           </p>
         </div>
         <div class="col-lg-4">
@@ -83,15 +77,15 @@
       <div class="row g-5">
             <div class="col-lg-8">
               <div class="accordion" id="accordionExample">
-                 <div class="accordion-item" *ngFor="let cir of course.CurriculumInfo; let i=index">
+                 <div class="accordion-item" *ngFor="let cir of course.curriculumInfo; let i=index">
                     <h2 class="accordion-header" id="heading{{i}}">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" aria-expanded="false" [attr.aria-controls]="'#collapse'+i">
+                        <img src="assets/img/yogaicon.png" class="yogaicon">
                         {{cir.title}}
                       </button>
                     </h2>
                     <div id="collapse{{i}}" class="accordion-collapse collapse" [attr.aria-labelledby]="'heading'+i" data-bs-parent="#accordionExample">
-                      <div class="accordion-body" innerHtml="{{cir.para}}">
-
+                      <div class="accordion-body" [innerHtml]="cir.para | safeHtml:'html'">
                       </div>
                     </div>
                   </div>
@@ -132,6 +126,79 @@
                 </p>
               </div>
             </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="upcoming-event">
+    <div class="container">
+      <div class="section-title">
+        <h3 class="mb-5">Upcoming Events</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="event-details" *ngFor="let fee of course.feeInfo">
+            <div class="event-detail-heading">
+              <h4 class="orange">{{fee.title}}</h4>
+            </div>
+            <div class="discount-rate">
+              <div class="room-rate">
+                <p><span>
+                  <b>{{fee.feeText}}</b>
+                </span>
+              Fees start from
+              </p>
+              <div class="d-flex amount-fee">
+                <h4>{{fee.currency}} {{fee.amount}}</h4>
+                <p>
+                  <br>
+                  <s>{{fee.currency}} {{fee.originalAmount}}</s>
+                </p>
+              </div>
+              </div>
+            </div>
+            <div class="details-wrp">
+              <div class="events-heading">
+                 <h4 class="orange">What is Included in Course Fees</h4>
+              </div>
+              <ul class="objectives-list clearfix">
+                 <div class="col-xs-6">
+                    <li>28 Days Accommodation</li>
+                    <li>1 book Yoga Mala ("by k. Pattabhi Jois")
+                    </li>
+                    <li>1 Pen and note book</li>
+                    <li>Attached bathrooms</li>
+                    <li>1 book Asana Pranayama Mudra Bandha ("by
+                       Swami Satyananda Saraswati")</li>
+                 </div>
+                 <div class="col-xs-6">
+                    <li>Pure vegetarian meals</li>
+                    <li>Satkarma cleansing items</li>
+                    <li>T-Shirt</li>
+                    <li>Yoga Alliance Certification</li>
+                    <li>One bag</li>
+                    <li>River rafting</li>
+                 </div>
+              </ul>
+           </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="event-container-div">
+            <div class="event-div">
+               <p class="orange"><b>START DATE</b></p>
+               <p class="orange"><b>END DATE</b></p>
+               <p class="orange"><b>AVAILABILITY</b></p>
+            </div>
+            <div class="event-div" *ngFor="let event of course.upcomingEventInfo">
+               <a href="#">
+                  <p>{{event.startDate}}</p>
+                  <p>{{event.endDate}}</p>
+                  <p class="bg-dark-shade">{{event.seat}} SPOT LEFT</p>
+               </a>
+            </div>
+         </div>
         </div>
       </div>
     </div>
