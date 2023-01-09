@@ -3,7 +3,7 @@
 ul {
     list-style-type: none;
   }
- 
+
   .header{
     background: #F9751E;
   }
@@ -16,4 +16,8 @@ ul {
   }
   .orange{
     color: #F9751E;
+  }
+  .fit-image-home{
+    height: 400px;
+    object-fit: cover;
   }
