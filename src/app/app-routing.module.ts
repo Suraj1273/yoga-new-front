@@ -9,7 +9,6 @@ const routes: Routes = [
   // {path:'course', component:CourseComponent},
   {path:'course/:id', component:CourseComponent},
   {path:'stripe', component:TestStripeComponent}
-
 ];
 
 @NgModule({
