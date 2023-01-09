@@ -5,7 +5,10 @@ import {HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class WebapiService {
-  private url = 'http://localhost:3000/';
+  // private url = 'http://localhost:3000/';
+  private url = 'http://34.203.244.83:3000/';
+
+
   constructor(private http:HttpClient) { }
 
   getCategory(id =""){
@@ -14,5 +17,10 @@ export class WebapiService {
 
    getCourseById(data:any){
     return this.http.post(this.url+"api/v1/getCourseBySlug",data);
+   }
+
+   saveInquiry(data:any){
+    return this.http.post(this.url+"api/v1/inquiryEmail",data);
+
    }
 }
