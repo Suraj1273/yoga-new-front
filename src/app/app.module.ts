@@ -20,6 +20,12 @@ import { TrainersComponent } from './trainers/trainers.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { FaqComponent } from './faq/faq.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { TermAndConditionComponent } from './term-and-condition/term-and-condition.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { NgxLoadingModule } from "ngx-loading";
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +42,9 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     TrainersComponent,
     GalleryComponent,
     FaqComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+    TermAndConditionComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,10 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     HttpClientModule,
     NgImageSliderModule,
     NgxUsefulSwiperModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule,
+    NgxLoadingModule.forRoot({}),
+    LazyLoadImageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
