@@ -12,6 +12,14 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { CourseComponent } from './course/course.component';
 import { TestStripeComponent } from './test-stripe/test-stripe.component';
 import { SafeHtmlPipe } from './safe-html.pipe';
+import { AboutComponent } from './about/about.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { ContactComponent } from './contact/contact.component';
+import { TrainersComponent } from './trainers/trainers.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { FaqComponent } from './faq/faq.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +28,15 @@ import { SafeHtmlPipe } from './safe-html.pipe';
     IndexComponent,
     CourseComponent,
     TestStripeComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    AboutComponent,
+    BlogComponent,
+    BlogDetailComponent,
+    ContactComponent,
+    TrainersComponent,
+    GalleryComponent,
+    FaqComponent,
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule,

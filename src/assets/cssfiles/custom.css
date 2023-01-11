@@ -566,3 +566,160 @@ width: 100%;
   .video-data p {
     font-size: 24px;
 }
+
+.breadcrumb_section{
+    padding: 8px;
+    background: #f08959;
+}
+.breadcrumb{
+    margin:0;
+    padding: 5px;
+}
+/* blog */
+.single-blog{
+    display: flex;
+    background: #f0f0f0;
+    margin: 10px;
+    box-shadow: 0px 4px 10px -2px #cccc;
+    border-radius: 10px 0 10px 0;
+}
+.single-blog a{}
+.single-blog img{}
+.single-blog span{}
+.single-blog p{}
+
+.one-blog{
+    display: flex;
+    background: #f0f0f0;
+}
+.author h2{
+    background: #f9f9f9;
+ font-size: 24px;
+ display: table;
+ padding: 5px;
+ }
+ .author img {
+      
+    }
+    .author h3{
+
+    }
+    .author p{
+
+    }
+    .author span{
+
+    }
+
+
+    .main-blog{
+
+    }
+    .main-blog img{
+
+    }
+    .main-blog p{
+       margin-bottom: 16px;
+     line-height: 26px;
+     font-size: 16px;
+    }
+
+    .main-blog h2{
+       font-size: 26px;
+margin-bottom: 5px;
+    }
+    .main-blog h3{
+       font-size: 24px;
+margin-bottom: 5px;
+    }
+    .main-blog a{
+       color: #FF8C00;
+    }
+    .right-sidebar{
+
+    }
+    .right-sidebar .card{
+           padding: 5px 10px;
+border: 1px solid #ccc;
+margin-bottom: 22px;
+box-shadow: 0px 4px 8px -5px #212121;
+border-radius: 15px;
+    }
+    .right-sidebar .card-img-top{
+       border-radius: 10px !important;
+    }
+    .right-sidebar h5{
+       font-weight: 600;
+     font-size: 16px;
+    }
+    .right-sidebar p{
+
+    }
+    .right-sidebar a{
+
+    }
+    .row{
+/*               display: flex;*/
+    }
+    .container{
+/*               display: flex;*/
+    }
+    .bread {
+        height: 55px;
+        text-align: left;
+        display: flex;
+        align-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .breadcrumb{
+           position: relative !important;
+          font-size: 12px;
+    }
+    .main-title{
+       font-weight: 800;
+    }
+    .recomm{}
+    .recomm .card{
+       padding: 5px 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 22px;
+        box-shadow: 0px 4px 8px -5px #212121;
+        border-radius: 15px;
+    }
+    .recomm h4{
+       font-weight: 600;
+       font-size: 16px;
+    }
+    .recomm h5{
+           font-weight: 600;
+           font-size: 16px;
+           margin: 14px 0;
+    }
+    .recomm h3{
+       font-weight: 600;
+       font-size: 16px;
+    }
+    .recomm .card-img-top {
+        border-radius: 10px !important;
+    }
+    .recomm a{}
+    .recomm .single{
+          /* margin: 5px 0;
+border: 1px solid #eee;
+padding: 6px;
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+align-items: center;
+box-shadow: 0px 2px 10px -4px #ccc;
+border-radius: 5px;*/
+    }
+    .hr{
+
+        display: flex;
+        padding: 5px;
+
+    }
+
