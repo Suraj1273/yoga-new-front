@@ -640,7 +640,7 @@
                         <div class="master card">
 
                                 <div class="img-wrapper">
-                                    <img src="{{imageUrl}}{{master.picture}}" alt="Not Loaded" class="img-fluid">
+                                    <img [defaultImage]="defaultImage" [lazyLoad]="imageUrl+master.picture" alt="{{master.title}}" class="img-fluid">
                                 </div>
                                 <div class="caption-wrapper">
                                     <div class="title">
@@ -842,12 +842,12 @@
                              <div class="col-lg-6 float-left p-4 col-12" *ngFor="let blog of blogList">
                                 <div class=" blog">
                                     <div class="pic-wrapper">
-                                        <img class="fit-image-home" src="{{imageUrl}}{{blog.image}}">
+                                        <img class="fit-image-home" [defaultImage]="defaultImage" [lazyLoad]="imageUrl+blog.image" alt="{{blog.title}}">
                                     </div>
                                     <div class="text">
                                         <h5>{{blog.title}}</h5>
-                                        <!-- <p>Yoga is an ancient form of exercise that focuses on strength</p> -->
-                                        <a href="" class="btn readmore">Read More</a>
+                                        <p>{{blog.shortDesc}}...</p>
+                                        <a routerLink="/blog-detail/{{blog.slug}}" class="btn readmore">Read More</a>
                                     </div>
                                 </div>
                              </div>

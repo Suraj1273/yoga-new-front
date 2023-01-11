@@ -1,6 +1,6 @@
 <main id="main">
     <section class="breadcrumb_section">
-        
+
         <div class="container">
             <div class="row">
                 <nav aria-label="breadcrumb">
@@ -15,82 +15,41 @@
     <section  class="p-0">
         <div class="container">
                 <div class="row">
-                   <div class="col-lg-12 pull-left">
+                   <div class="col-lg-12 pull-left" *ngFor="let blog of blogList | paginate: { itemsPerPage: 10, currentPage: p,totalItems: total }">
                         <div class=" single-blog">
                             <div class="col-lg-3 p-4">
-                                <a href="">
-                                    <img src="https://www.yogavidyaschool.com/images/blogs/41-What-is-Dirga-pranayama.png"  class="img-fluid">
+                                <a routerLink="/blog-detail/{{blog.slug}}">
+                                    <img [defaultImage]="defaultImage" [lazyLoad]="imageUrl+blog.image" class="img-fluid">
+
                                 </a>
                             </div>
                             <div class="col-lg-9 p-4">
-                                <a href="">
-                                    <h3>WHAT IS DIRGA PRANAYAMA?</h3>
+                                <a routerLink="/blog-detail/{{blog.slug}}">
+                                    <h3>{{blog.title}}</h3>
                                 </a>
-                                <span class="date"> Posted on 23/12/2022</span>
-                                <p> Pranayama is an age-old technique that has evolved and been practiced for several millennia for enhancing ones health and well-being. Pranayama is all about breathwork training where controlled breath helps to purify the mind and the body. Today, modern science has also emphasized the role of... </p>
-                                <a class="standard-btn btn "> Read More</a>
+                                <span class="date"> Posted on {{blog.created | date: 'dd/MM/yyyy'}}</span>
+                                <p>{{blog.shortDesc}}...
+                                <a routerLink="/blog-detail/{{blog.slug}}" class="standard-btn btn">Read More</a>
+                                </p>
                             </div>
                         </div>
                    </div>
                    <!-- single -->
-                   
-                   <div class="col-lg-12 pull-left">
-                    <div class=" single-blog">
-                        <div class="col-lg-3 p-4">
-                            <a href="">
-                                <img src="https://www.yogavidyaschool.com/images/blogs/41-What-is-Dirga-pranayama.png"  class="img-fluid">
-                            </a>
-                        </div>
-                        <div class="col-lg-9 p-4">
-                            <a href="">
-                                <h3>WHAT IS DIRGA PRANAYAMA?</h3>
-                            </a>
-                            <span class="date"> Posted on 23/12/2022</span>
-                            <p> Pranayama is an age-old technique that has evolved and been practiced for several millennia for enhancing ones health and well-being. Pranayama is all about breathwork training where controlled breath helps to purify the mind and the body. Today, modern science has also emphasized the role of... </p>
-                            <a class="standard-btn btn "> Read More</a>
-                        </div>
-                    </div>
-               </div>
-               <!-- single -->
-               
-               <div class="col-lg-12 pull-left">
-                <div class=" single-blog">
-                    <div class="col-lg-3 p-4">
-                        <a href="">
-                            <img src="https://www.yogavidyaschool.com/images/blogs/41-What-is-Dirga-pranayama.png"  class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="col-lg-9 p-4">
-                        <a href="">
-                            <h3>WHAT IS DIRGA PRANAYAMA?</h3>
-                        </a>
-                        <span class="date"> Posted on 23/12/2022</span>
-                        <p> Pranayama is an age-old technique that has evolved and been practiced for several millennia for enhancing ones health and well-being. Pranayama is all about breathwork training where controlled breath helps to purify the mind and the body. Today, modern science has also emphasized the role of... </p>
-                        <a class="standard-btn btn "> Read More</a>
-                    </div>
                 </div>
-           </div>
-           <!-- single -->
-           
-           <div class="col-lg-12 pull-left">
-            <div class=" single-blog">
-                <div class="col-lg-3 p-4">
-                    <a href="">
-                        <img src="https://www.yogavidyaschool.com/images/blogs/41-What-is-Dirga-pranayama.png"  class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-lg-9 p-4">
-                    <a href="">
-                        <h3>WHAT IS DIRGA PRANAYAMA?</h3>
-                    </a>
-                    <span class="date"> Posted on 23/12/2022</span>
-                    <p> Pranayama is an age-old technique that has evolved and been practiced for several millennia for enhancing ones health and well-being. Pranayama is all about breathwork training where controlled breath helps to purify the mind and the body. Today, modern science has also emphasized the role of... </p>
-                    <a class="btn standard-btn"> Read More</a>
-                </div>
-            </div>
-       </div>
-       <!-- single -->
-                   
-                </div>
+                <pagination-controls (pageChange)="onTableDataChange($event)"></pagination-controls>
         </div>
     </section>
+    <ng-template #emptyLoadingTemplate></ng-template>
+    <ngx-loading
+    [show]="loading"
+    [config]="{
+      animationType: ngxLoadingAnimationTypes.wanderingCubes,
+      backdropBackgroundColour: 'rgba(0,0,0,0.9)',
+      primaryColour: '#fff',
+      secondaryColour: '#fff',
+      tertiaryColour: '#fff',
+      backdropBorderRadius: '3px'
+    }"
+    [template]="emptyLoadingTemplate"
+  ></ngx-loading>
+
