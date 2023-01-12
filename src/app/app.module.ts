@@ -25,6 +25,7 @@ import { TermAndConditionComponent } from './term-and-condition/term-and-conditi
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { NgxLoadingModule } from "ngx-loading";
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { TestimonialComponent } from './testimonial/testimonial.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     FaqComponent,
     TestimonialsComponent,
     TermAndConditionComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    TestimonialComponent
   ],
   imports: [
     BrowserModule,

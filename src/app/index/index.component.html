@@ -14,7 +14,7 @@
                     </div>
                   </a> -->
                   <a href="#">
-                    <img src="{{imageUrl}}{{ slider.image }}" alt="Yoga Vidya School">
+                    <img [defaultImage]="defaultImage" [lazyLoad]="imageUrl+slider.image" alt="Yoga Vidya School">
                   </a>
                 </div>
                 <!-- <div class="swiper-slide">

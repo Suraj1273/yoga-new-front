@@ -8,6 +8,8 @@ import { BlogComponent } from './blog/blog.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { TermAndConditionComponent } from './term-and-condition/term-and-condition.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { FaqComponent } from './faq/faq.component';
+import { TestimonialComponent } from './testimonial/testimonial.component';
 
 const routes: Routes = [
   { path: '', component: IndexComponent},
@@ -20,6 +22,9 @@ const routes: Routes = [
   {path:'blog-detail/:id', component:BlogDetailComponent},
   {path:'terms-and-conditions', component:TermAndConditionComponent},
   {path:'privacy-policy', component:PrivacyPolicyComponent},
+  {path:'faq', component:FaqComponent},
+  {path:'testimonial', component:TestimonialComponent},
+
 
 ];
 
