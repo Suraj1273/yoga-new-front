@@ -1,0 +1,19 @@
+<section
+  id="page-title"
+  class="mt-5"
+>
+  <div class="container clearfix">
+    <h1>{{mentorData?.name}}</h1>
+    <span>{{mentorData?.title}}</span>
+  </div>
+</section>
+<section id="content" style="margin-bottom: 0px">
+  <div class="content-wrap" style="padding-top: 40px">
+    <div class="container clearfix">
+      <div class="col_full nobottommargin cms" [innerHTML]="mentorData?.intro | safeHtml:'html'">
+
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</section>

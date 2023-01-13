@@ -24,3 +24,12 @@ ul {
     height: 400px;
     object-fit: cover;
   }
+
+  .med{
+    height:640px;
+    width:640px;
+  }
+  .small{
+    height:340;
+    width:260px;
+  }

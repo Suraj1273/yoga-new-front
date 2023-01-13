@@ -10,6 +10,8 @@ import { TermAndConditionComponent } from './term-and-condition/term-and-conditi
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { FaqComponent } from './faq/faq.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
+import { TrainersComponent } from './trainers/trainers.component';
+import { ViewTrainersComponent } from './trainers/view-trainers/view-trainers.component';
 
 const routes: Routes = [
   { path: '', component: IndexComponent},
@@ -24,12 +26,12 @@ const routes: Routes = [
   {path:'privacy-policy', component:PrivacyPolicyComponent},
   {path:'faq', component:FaqComponent},
   {path:'testimonial', component:TestimonialComponent},
-
-
+  {path:'mentor',component:TrainersComponent},
+  {path:'mentor/:id',component:ViewTrainersComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{scrollPositionRestoration: 'enabled'})],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled', initialNavigation: 'enabledBlocking' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
