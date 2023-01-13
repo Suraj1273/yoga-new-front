@@ -15,14 +15,21 @@
    <section  class="mb-5 page-section in-school">
     <div class="container" data-aos="fade-up">
       <div class="row">
-        <div class="col-lg-8 mb-5">
+        <div class="col-lg-8 mb-5 title">
           <h2 class="section-title">About {{course.coursetitle}}</h2>
           <p [innerHtml]="course.courseDesc | safeHtml:'html'">
           </p>
         </div>
         <div class="col-lg-4">
           <div class="form-wrap form">
+            <h3 class="headerform">Apply Now</h3>
+
+
             <form class="apply-now" #inquiry ="ngForm" (ngSubmit)="saveInquiry(inquiryData)">
+              
+              <div class="form-group">
+                <span class="price">Course Fee:<br><span class="rate">$700 USD</span></span>
+              </div>
                 <div class="form-group">
                  <input type="text" class="form-control" placeholder="Your Name" name="name" [(ngModel)]="inquiryData.name" id="" required="">
                 </div>
@@ -44,6 +51,10 @@
                   <div class="form-group d-grid">
                     <button type="submit" class="btn btn-primary standard-btn">Enquiry</button>
                   </div>
+                  
+                  <div class="form-group d-grid">
+                    <button class="btn btn-primary standard-btn">Book Your Seat Now</button>
+                  </div>
             </form>
           </div>
         </div>
@@ -54,7 +65,7 @@
    <section  class="mb-5 page-section patern-bg2">
     <div class="container" data-aos="fade-up">
       <div class="row">
-        <div class="col-lg-8 mb-5" *ngFor="let cont of course.content">
+        <div class="col-lg-8 mb-5 title" *ngFor="let cont of course.content">
           <h2 class="section-title">{{cont.title}}</h2>
           <p [innerHtml]="cont.para | safeHtml: 'html'">
           </p>
@@ -67,7 +78,7 @@
   </section>
   <section class="in-school">
     <div class="container page-section">
-      <div class="row">
+      <div class="row title">
          <h2 class="section-title mb-2">Curriculum</h2>
          <p><strong>
            What you will discover
@@ -110,8 +121,8 @@
   </section>
    <section class="in-school daily-schedule">
     <div class="container page-section">
-      <div class="row g-5 schedule-heading">
-         <h2 class="section-title mb-5 text-center"><span>Daily Schedule</span>for {{course.coursetitle}}</h2>
+      <div class="row g-5 schedule-heading title">
+         <h2 class="section-title mb-5 text-left"><span>Daily Schedule</span> for {{course.coursetitle}}</h2>
       </div>
       <div class="row g-5">
         <div class="col-lg-6" *ngFor="let sch of course.scheduleInfo">
@@ -133,8 +144,8 @@
 
   <section class="upcoming-event">
     <div class="container">
-      <div class="section-title">
-        <h3 class="mb-5">Upcoming Events</h3>
+      <div class="section-title title">
+        <h2 class="mb-5">Upcoming Events</h2>
       </div>
       <div class="row">
         <div class="col-md-6">
@@ -162,23 +173,24 @@
               <div class="events-heading">
                  <h4 class="orange">What is Included in Course Fees</h4>
               </div>
-              <ul class="objectives-list clearfix">
+              <ul class="list list-two-parts by-icon-list leaf-list mt-2">
+                
                  <div class="col-xs-6">
-                    <li>28 Days Accommodation</li>
-                    <li>1 book Yoga Mala ("by k. Pattabhi Jois")
+                  <li><img src="assets/img/yogaicon.png" class="yogaicon">28 Days Accommodation</li>
+                    <li> <img src="assets/img/yogaicon.png" class="yogaicon">1 book Yoga Mala ("by k. Pattabhi Jois")
                     </li>
-                    <li>1 Pen and note book</li>
-                    <li>Attached bathrooms</li>
-                    <li>1 book Asana Pranayama Mudra Bandha ("by
+                    <li> <img src="assets/img/yogaicon.png" class="yogaicon">1 Pen and note book</li>
+                    <li> <img src="assets/img/yogaicon.png" class="yogaicon">Attached bathrooms</li>
+                    <li> <img src="assets/img/yogaicon.png" class="yogaicon">1 book Asana Pranayama Mudra Bandha ("by
                        Swami Satyananda Saraswati")</li>
                  </div>
                  <div class="col-xs-6">
-                    <li>Pure vegetarian meals</li>
-                    <li>Satkarma cleansing items</li>
-                    <li>T-Shirt</li>
-                    <li>Yoga Alliance Certification</li>
-                    <li>One bag</li>
-                    <li>River rafting</li>
+                    <li> <img src="assets/img/yogaicon.png" class="yogaicon">Pure vegetarian meals</li>
+                    <li> <img src="assets/img/yogaicon.png" class="yogaicon">Satkarma cleansing items</li>
+                    <li> <img src="assets/img/yogaicon.png" class="yogaicon">T-Shirt</li>
+                    <li> <img src="assets/img/yogaicon.png" class="yogaicon">Yoga Alliance Certification</li>
+                    <li> <img src="assets/img/yogaicon.png" class="yogaicon">One bag</li>
+                    <li> <img src="assets/img/yogaicon.png" class="yogaicon">River rafting</li>
                  </div>
               </ul>
            </div>
@@ -203,4 +215,102 @@
       </div>
     </div>
   </section>
+  <section class="upcoming-event">
+    <div class="container">
+      <div class="section-title title">
+        <h2 class="mb-5">Students Reviews</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <img src="https://www.ekamyogashala.com/images/main/gallery.png" alt="" class="img-fluid">
+        </div>
+        <div class="col-lg-6 stu-vid-parent">
+          <div class=" col-lg-6">
+            <div class="stu-vid-wrap">
+            <a href="https://www.youtube.com/watch?v=PB3gJIpV5Po" target="_blank">
+              <img src="https://www.ekamyogashala.com/images/main/100ytt-youtube-one.jpg" class="img-responsive" alt="">
+            </a>
+            </div>
+          </div>
+          
+          <div class=" col-lg-6">
+            <div class="stu-vid-wrap">
+            <a href="https://www.youtube.com/watch?v=PB3gJIpV5Po" target="_blank">
+              <img src="https://www.ekamyogashala.com/images/main/100ytt-youtube-one.jpg" class="img-responsive" alt="">
+            </a>
+            </div>
+          </div>
+          
+          <div class=" col-lg-6">
+            <div class="stu-vid-wrap">
+            <a href="https://www.youtube.com/watch?v=PB3gJIpV5Po" target="_blank">
+              <img src="https://www.ekamyogashala.com/images/main/100ytt-youtube-one.jpg" class="img-responsive" alt="">
+            </a>
+            </div>
+          </div>
+          
+          <div class=" col-lg-6">
+            <div class="stu-vid-wrap">
+            <a href="https://www.youtube.com/watch?v=PB3gJIpV5Po" target="_blank">
+              <img src="https://www.ekamyogashala.com/images/main/100ytt-youtube-one.jpg" class="img-responsive" alt="">
+            </a>
+            </div>
+          </div>
+          
+          <div class=" col-lg-6">
+            <div class="stu-vid-wrap">
+            <a href="https://www.youtube.com/watch?v=PB3gJIpV5Po" target="_blank">
+              <img src="https://www.ekamyogashala.com/images/main/100ytt-youtube-one.jpg" class="img-responsive" alt="">
+            </a>
+            </div>
+          </div>
+          
+          <div class=" col-lg-6">
+            <div class="stu-vid-wrap">
+            <a href="https://www.youtube.com/watch?v=PB3gJIpV5Po" target="_blank">
+              <img src="https://www.ekamyogashala.com/images/main/100ytt-youtube-one.jpg" class="img-responsive" alt="">
+            </a>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+    </section>
+    <section class="upcoming-event">
+      <div class="container">
+        <div class="section-title title">
+          <h2 class="mb-5">Frequently Asked Questions</h2>
+        </div>
+        <div class="row">
+          <div  class="accordion" id="accordionExample">
+            <div class="accordion-item" *ngFor="let cir of course.curriculumInfo; let i=index">
+               <h2 class="accordion-header" id="heading{{i}}">
+                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" aria-expanded="false" [attr.aria-controls]="'#collapse'+i">
+                   <img src="assets/img/yogaicon.png" class="yogaicon">
+                   {{cir.title}}
+                 </button>
+               </h2>
+               <div id="collapse{{i}}" class="accordion-collapse collapse" [attr.aria-labelledby]="'heading'+i" data-bs-parent="#accordionExample">
+                 <div class="accordion-body" [innerHtml]="cir.para | safeHtml:'html'">
+                 </div>
+               </div>
+             </div>
+            <!--   <div class="accordion-item">
+               <h2 class="accordion-header" id="headingThree">
+                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                   <img src="assets/img/yogaicon.png" class="yogaicon">
+                   Classical &amp; Traditional Practice of Hatha Yoga
+
+                 </button>
+               </h2>
+               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                 <div class="accordion-body">
+                   <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                 </div>
+               </div>
+             </div> -->
+           </div>
+          </div>
+          </div>
+      </section>
 </main>

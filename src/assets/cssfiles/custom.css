@@ -750,3 +750,23 @@ border-radius: 5px;*/
 .location{
     margin-bottom: 10px;
 }
+.price{
+    font-size: 14px;
+    font-weight: 600;
+}
+.price .rate{
+    font-size: 30px;
+    color: white;
+}
+.headerform{
+    color: #fff;
+    font-weight: 700;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+.stu-vid-wrap img{
+    border-radius: 10px 0 10px 0;
+}
+.stu-vid-parent .col-lg-6{
+    float: left;
+}
