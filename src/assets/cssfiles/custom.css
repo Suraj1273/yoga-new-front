@@ -33,7 +33,7 @@ body{
 }
 
 .yoga-class{
-    padding: 90px 0 150px;
+    /* padding: 90px 0 150px; */
 }
 .yoga-class .img-wrapper{
     position: relative;
@@ -63,6 +63,7 @@ body{
 
 .in-school{
     padding: 50px 0;
+    background-color: #ebebeb;
     position: relative;
 }
 .in-school::before{
@@ -81,7 +82,7 @@ body{
 }
 .in-school .sub-title p{
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 28px;
     color: var(--black2);
 }
@@ -101,13 +102,14 @@ body{
 .appreciation{
     
 }
-.appreciation .title h2{
+.title h2{
     line-height: 70px;
 }
 .appreciation .pic-wrapper{
     display: flex;   
     max-width: 90%;
     margin: auto;
+ 
 }
 .appreciation .pic-wrapper .left-side{
     flex: 0 1 40%;
@@ -200,9 +202,11 @@ visibility: visible;
 	border: none;
     padding: 40px 5px;
     border-radius: 50px 0px 50px 0px;
+    box-shadow: 4px 4px 10px -8px #000;
+    margin: 10px;
 }
 .master .img-wrapper img{
-
+    border-radius: 30px 0 30px 0;
 }
 .master h4{
 	font-size: 18px;
@@ -239,7 +243,7 @@ position: relative;
 	position: absolute;
     bottom: 1px;
     padding: 30px;
-    background: rgb(0 0 0 / 18%);
+    background: rgb(0 0 0 / 50%);
     width: 100%;
     border-radius: 0px 0 20px 0;
 }
@@ -250,6 +254,7 @@ position: relative;
 .blog .text p{
 	    color: #fff;
     font-size: 16px;
+    line-height: 22px;
 }
 .blog .text a.readmore{
 	background: #fff;
@@ -507,11 +512,17 @@ width: 100%;
   
   @media (max-width: 768px) {
     .img-bg {
-      height: 400px;
+      height: 550px;
       border-radius: 10px 0 10px 0;
+    }
+    .appreciation .pic-wrapper{
+        flex-direction: row;
     }
   }
   @media only screen and (min-width : 320px) {
+    .appreciation .pic-wrapper{
+        flex-direction: column;
+    }
     .img-bg {
       height: 200px;
       border-radius: 10px 0 10px 0;
@@ -525,6 +536,9 @@ width: 100%;
     }
   }
   @media only screen and (min-width : 480px) {
+    .appreciation .pic-wrapper{
+        flex-direction: column;
+    }
     .img-bg {
       height: 200px;
       border-radius: 10px 0 10px 0;
@@ -540,14 +554,21 @@ width: 100%;
   }
   @media only screen and (min-width : 992px) {
     .img-bg {
-      height: 400px;
+      height: 550px;
       border-radius: 10px 0 10px 0;
+    }
+    .appreciation .pic-wrapper{
+        flex-direction: row;
     }
   }
   @media only screen and (min-width : 1200px) {
     .img-bg {
-      height: 400px;
+      height: 550px;
       border-radius: 10px 0 10px 0;
+    }
+    
+    .appreciation .pic-wrapper{
+        flex-direction: row;
     }
   }
   
@@ -565,6 +586,9 @@ width: 100%;
   }
   .video-data p {
     font-size: 24px;
+    margin: 0;
+    line-height: 20px;
+
 }
 
 .breadcrumb_section{
@@ -723,3 +747,6 @@ border-radius: 5px;*/
 
     }
 
+.location{
+    margin-bottom: 10px;
+}
