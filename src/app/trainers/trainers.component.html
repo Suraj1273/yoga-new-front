@@ -1,1 +1,206 @@
-<p>trainers works!</p>
+<section id="content" style="margin-bottom: 0px;">
+
+  <div class="content-wrap" style="padding-top:40px;">
+
+     <div class="container clearfix">
+
+        <div class="col_full nobottommargin ">
+
+           <div class="row">
+
+
+                 <div class="col-md-4 col-sm-6 bottommargin" *ngFor="let mentor of mentorList">
+
+                    <div class="team">
+
+                       <div class="team-image">
+
+                          <a href="/mentor/{{mentor.slug}}"><img [defaultImage]="defaultImage" [lazyLoad]="imageUrl+mentor.picture"  alt="{{mentor.name}}" style="border: 1px solid #eeeeee;padding:5px;"></a>
+
+                       </div>
+
+                       <div class="team-desc">
+
+                          <div class="team-title">
+                             <h4>{{mentor.name}}</h4><span>{{mentor.title}}</span>
+                          </div>
+
+                       </div>
+
+                    </div>
+
+                 </div>
+
+
+                 <!-- <div class="col-md-4 col-sm-6 bottommargin">
+
+                    <div class="team">
+
+                       <div class="team-image">
+
+                          <a href="https://www.yogavidyaschool.com/mentor/acharya-prashant-jakhmola" title="Acharya Prashant Jakhmola"><img src="https://www.yogavidyaschool.com/images/team/prashant.jfif" alt="Acharya Prashant Jakhmola" style="border: 1px solid #eeeeee;padding:5px;"></a>
+
+                       </div>
+
+                       <div class="team-desc">
+
+                          <div class="team-title">
+                             <h4>Acharya Prashant Jakhmola</h4><span>Pranayama, Shatkriya, Bandha</span>
+                          </div>
+
+                       </div>
+
+                    </div>
+
+                 </div>
+
+
+                 <div class="col-md-4 col-sm-6 bottommargin">
+
+                    <div class="team">
+
+                       <div class="team-image">
+
+                          <a href="https://www.yogavidyaschool.com/mentor/ksenia-rasapriya-bodhi-ji" title="Ksenia Rasapriya Bodhi Ji"><img src="https://www.yogavidyaschool.com/images/team/ksenia.jpg" alt="Ksenia Rasapriya Bodhi Ji" style="border: 1px solid #eeeeee;padding:5px;"></a>
+
+                       </div>
+
+                       <div class="team-desc">
+
+                          <div class="team-title">
+                             <h4>Ksenia Rasapriya Bodhi Ji</h4><span>Yoga Anatomy</span>
+                          </div>
+
+                       </div>
+
+                    </div>
+
+                 </div>
+
+
+                 <div class="col-md-4 col-sm-6 bottommargin">
+
+                    <div class="team">
+
+                       <div class="team-image">
+
+                          <a href="https://www.yogavidyaschool.com/mentor/vikramjeet-singh" title="Vikramjeet Singh"><img src="https://www.yogavidyaschool.com/images/team/vikram-ji.png" alt="Vikramjeet Singh" style="border: 1px solid #eeeeee;padding:5px;"></a>
+
+                       </div>
+
+                       <div class="team-desc">
+
+                          <div class="team-title">
+                             <h4>Vikramjeet Singh</h4><span>Yogic Anatomy &amp; Yoga Therapy</span>
+                          </div>
+
+                       </div>
+
+                    </div>
+
+                 </div>
+
+
+                 <div class="col-md-4 col-sm-6 bottommargin">
+
+                    <div class="team">
+
+                       <div class="team-image">
+
+                          <a href="https://www.yogavidyaschool.com/mentor/acharya-pratap" title="Acharya Pratap"><img src="https://www.yogavidyaschool.com/images/team/pratap.jpg" alt="Acharya Pratap" style="border: 1px solid #eeeeee;padding:5px;"></a>
+
+                       </div>
+
+                       <div class="team-desc">
+
+                          <div class="team-title">
+                             <h4>Acharya Pratap</h4><span>Hatha &amp; Ashtanga Yoga</span>
+                          </div>
+
+                       </div>
+
+                    </div>
+
+                 </div>
+
+
+                 <div class="col-md-4 col-sm-6 bottommargin">
+
+                    <div class="team">
+
+                       <div class="team-image">
+
+                          <a href="https://www.yogavidyaschool.com/mentor/reema-saikia-ji" title="Reema Saikia Ji"><img src="https://www.yogavidyaschool.com/images/team/reena.jpg" alt="Reema Saikia Ji" style="border: 1px solid #eeeeee;padding:5px;"></a>
+
+                       </div>
+
+                       <div class="team-desc">
+
+                          <div class="team-title">
+                             <h4>Reema Saikia Ji</h4><span>Meditation / Yoga Nidra</span>
+                          </div>
+
+                       </div>
+
+                    </div>
+
+                 </div>
+
+
+                 <div class="col-md-4 col-sm-6 bottommargin">
+
+                    <div class="team">
+
+                       <div class="team-image">
+
+                          <a href="https://www.yogavidyaschool.com/mentor/aparna-sharma" title="Aparna Sharma"><img src="https://www.yogavidyaschool.com/images/team/Aparna.jpeg" alt="Aparna Sharma" style="border: 1px solid #eeeeee;padding:5px;"></a>
+
+                       </div>
+
+                       <div class="team-desc">
+
+                          <div class="team-title">
+                             <h4>Aparna Sharma</h4><span></span>
+                          </div>
+
+                       </div>
+
+                    </div>
+
+                 </div>
+
+
+                 <div class="col-md-4 col-sm-6 bottommargin">
+
+                    <div class="team">
+
+                       <div class="team-image">
+
+                          <a href="https://www.yogavidyaschool.com/mentor/shivam-joshi" title="Shivam Joshi"><img src="https://www.yogavidyaschool.com/images/team/shivam.jpeg" alt="Shivam Joshi" style="border: 1px solid #eeeeee;padding:5px;"></a>
+
+                       </div>
+
+                       <div class="team-desc">
+
+                          <div class="team-title">
+                             <h4>Shivam Joshi</h4><span></span>
+                          </div>
+
+                       </div>
+
+                    </div>
+
+                 </div> -->
+
+
+           </div>
+
+        </div>
+
+     </div>
+
+     <div class="clear"></div>
+
+  </div>
+
+</section>

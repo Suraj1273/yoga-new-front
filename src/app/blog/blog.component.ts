@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { filter } from 'rxjs';
 import { WebapiService } from '../webapi.service';
 import { ngxLoadingAnimationTypes } from 'ngx-loading';
 
@@ -10,7 +9,7 @@ import { ngxLoadingAnimationTypes } from 'ngx-loading';
 })
 export class BlogComponent {
   public defaultImage = 'https://miro.medium.com/max/441/1*9EBHIOzhE1XfMYoKz1JcsQ.gif';
-  public loading = false;
+  loading:boolean = false;
   public ngxLoadingAnimationTypes = ngxLoadingAnimationTypes;
   imageUrl:any
   blogList:any;
@@ -31,12 +30,8 @@ export class BlogComponent {
   }
 
   getAllBlogs(){
-    this.loading = true;
     this.webapiService.getBlogs(this.filter).subscribe((res:any)=>{
-      console.log(res);
-      if(res.data){
-        this.loading = false;
-      }
+
       this.blogList = res.data;
       this.total = res.total;
     });

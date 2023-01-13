@@ -14,22 +14,17 @@
             ><span>{{cat.categoryname}}</span>
             <i class="bi bi-chevron-down dropdown-indicator"></i
           ></a>
-          <ul *ngIf="cat.subcategory[0].course.length">
-            <li class="dropdown" *ngFor="let subcat of cat.subcategory">
-              <a href="#"
-                ><span>{{subcat.subcategoryname}}</span>
-                <i class="bi bi-chevron-right dropdown-indicator"></i
+          <ul>
+            <li class="dropdown" *ngFor="let sub of cat.subCatData">
+              <a routerLink="/course/{{sub.slug}}"
+                ><span>{{sub.subcategoryname}}</span>
+                <i *ngIf="sub.courseCounter" class="bi bi-chevron-right dropdown-indicator"></i
               ></a>
               <ul>
-                <li *ngFor="let course of subcat.course">
-                  <a routerLink="/course/{{course.slug}}">{{course.courseName}}</a>
+                <li *ngFor="let course of sub.subCourseData">
+                  <a routerLink="/course/{{course.slug}}">{{course.subcategorycoursename}}</a>
                 </li>
               </ul>
-            </li>
-          </ul>
-          <ul *ngIf="!cat.subcategory[0].course.length">
-            <li *ngFor="let subcat of cat.subcategory">
-              <a routerLink="/course/{{subcat.slug}}">{{subcat.subcategoryname}}</a>
             </li>
           </ul>
         </li>
@@ -43,3 +38,17 @@
     </div>
   </div>
 </header>
+
+<!-- <ng-template #emptyLoadingTemplate></ng-template>
+<ngx-loading
+[show]="loading"
+[config]="{
+  animationType: ngxLoadingAnimationTypes.wanderingCubes,
+  backdropBackgroundColour: 'rgba(0,0,0,0.9)',
+  primaryColour: '#fff',
+  secondaryColour: '#fff',
+  tertiaryColour: '#fff',
+  backdropBorderRadius: '3px'
+}"
+[template]="emptyLoadingTemplate"
+></ngx-loading> -->

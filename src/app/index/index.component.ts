@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { SwiperOptions } from 'swiper';
 import { WebapiService } from '../webapi.service';
 import {Router,ActivatedRoute} from '@angular/router';
+import { ngxLoadingAnimationTypes } from 'ngx-loading';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-index',
@@ -10,6 +12,8 @@ import {Router,ActivatedRoute} from '@angular/router';
 })
 export class IndexComponent {
   public defaultImage = 'https://miro.medium.com/max/441/1*9EBHIOzhE1XfMYoKz1JcsQ.gif';
+  public loading = false;
+  public ngxLoadingAnimationTypes = ngxLoadingAnimationTypes;
 
  config: SwiperOptions = {
     pagination: { el: '.swiper-pagination', clickable: true },
@@ -23,7 +27,9 @@ export class IndexComponent {
   imageUrl: any;
   blogList: any;
   mentorList: any;
-  constructor(private webapiService: WebapiService, private router: Router){
+  channelInfo:any;
+  videoInfo:any;
+  constructor(private webapiService: WebapiService, private router: Router,private sanitizer: DomSanitizer){
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
@@ -33,12 +39,32 @@ export class IndexComponent {
     this.getAllSlider();
     this.getHomeBlog(2);
     this.getHomeMentors(4);
+    // this.getChannelDetails();
+    // this.getVideoDetails();
+  }
+
+  getChannelDetails(){
+    this.webapiService.getChannelDetails().subscribe((res:any)=>{
+      console.log(res,'channel');
+      this.channelInfo = res.items[0];
+    });
+  }
+  getVideoDetails(){
+    this.webapiService.getVideoDetails().subscribe((res:any)=>{
+      console.log(res,'video');
+      this.videoInfo = res.items;
+      for (const vid of this.videoInfo) {
+         let url = `https://www.youtube.com/embed/${vid.id.videoId}?controls=0`;
+
+         vid.addedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+      }
+    });
   }
 
  getAllSlider(){
   this.webapiService.getSliders().subscribe((res:any)=>{
    this.sliderList = res.data;
-   console.log(this.sliderList);
+  //  console.log(this.sliderList);
 
   });
  }

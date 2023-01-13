@@ -19,13 +19,13 @@ import { ContactComponent } from './contact/contact.component';
 import { TrainersComponent } from './trainers/trainers.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { FaqComponent } from './faq/faq.component';
-import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { TermAndConditionComponent } from './term-and-condition/term-and-condition.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { NgxLoadingModule } from "ngx-loading";
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { TestimonialComponent } from './testimonial/testimonial.component';
+import { ViewTrainersComponent } from './trainers/view-trainers/view-trainers.component';
 
 @NgModule({
   declarations: [
@@ -43,13 +43,13 @@ import { TestimonialComponent } from './testimonial/testimonial.component';
     TrainersComponent,
     GalleryComponent,
     FaqComponent,
-    TestimonialsComponent,
     TermAndConditionComponent,
     PrivacyPolicyComponent,
-    TestimonialComponent
+    TestimonialComponent,
+    ViewTrainersComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     NgImageSliderModule,
