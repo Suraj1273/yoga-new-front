@@ -1,12 +1,12 @@
-<main id="main" *ngFor="let course of courseList">
+<main id="main">
   <section  class=" mb-5 hero-page">
     <div class="overlay"></div>
     <div class="container" data-aos="fade-up">
       <div class="row">
         <div class="col-lg-8 mb-5">
-          <h1 class="main-title">{{course.coursetitle}}</h1>
+          <h1 class="main-title">{{courseList?.coursetitle}}</h1>
           <p>
-            {{course.shortDesc}}
+            {{courseList?.shortDesc}}
           </p>
         </div>
       </div>
@@ -15,9 +15,9 @@
    <section  class="mb-5 page-section in-school">
     <div class="container" data-aos="fade-up">
       <div class="row">
-        <div class="col-lg-8 mb-5 title">
-          <h2 class="section-title">About {{course.coursetitle}}</h2>
-          <p [innerHtml]="course.courseDesc | safeHtml:'html'">
+        <div class="col-lg-8 title">
+          <h2 class="section-title mb-3">About {{courseList?.coursetitle}}</h2>
+          <p [innerHtml]="courseList?.courseDesc | safeHtml:'html'">
           </p>
         </div>
         <div class="col-lg-4">
@@ -26,9 +26,9 @@
 
 
             <form class="apply-now" #inquiry ="ngForm" (ngSubmit)="saveInquiry(inquiryData)">
-              
+
               <div class="form-group">
-                <span class="price">Course Fee:<br><span class="rate">$700 USD</span></span>
+                <span class="price">Course Fee:<br><span class="rate">{{courseList?.feeInfo[0]?.amount}} {{courseList?.feeInfo[0]?.currency}}</span></span>
               </div>
                 <div class="form-group">
                  <input type="text" class="form-control" placeholder="Your Name" name="name" [(ngModel)]="inquiryData.name" id="" required="">
@@ -39,7 +39,7 @@
                 <div class="form-group">
                  <select class="form-control calender-wp" name="selCourseDate" id="selCourseDate"  name="courseDate" [(ngModel)]="inquiryData.courseDate" required="">
                     <option value="undefined">Select Course Date</option>
-                    <option *ngFor="let date of course.upcomingEventInfo" value="{{date.startDate}} ~ {{date.endDate}}">{{date.startDate}} - {{date.endDate}}</option>
+                    <option *ngFor="let date of courseList?.upcomingEventInfo" value="{{date.startDate}} ~ {{date.endDate}}">{{date.startDate}} - {{date.endDate}}</option>
                  </select>
                   </div>
                   <div class="form-group">
@@ -51,7 +51,7 @@
                   <div class="form-group d-grid">
                     <button type="submit" class="btn btn-primary standard-btn">Enquiry</button>
                   </div>
-                  
+
                   <div class="form-group d-grid">
                     <button class="btn btn-primary standard-btn">Book Your Seat Now</button>
                   </div>
@@ -65,9 +65,9 @@
    <section  class="mb-5 page-section patern-bg2">
     <div class="container" data-aos="fade-up">
       <div class="row">
-        <div class="col-lg-8 mb-5 title" *ngFor="let cont of course.content">
-          <h2 class="section-title">{{cont.title}}</h2>
-          <p [innerHtml]="cont.para | safeHtml: 'html'">
+        <div class="col-lg-8 mb-5 title" *ngFor="let o of courseList?.content">
+          <h2 class="section-title">{{o.title}}</h2>
+          <p [innerHtml]="o.para | safeHtml: 'html'">
           </p>
         </div>
         <div class="col-lg-4">
@@ -88,11 +88,11 @@
       <div class="row g-5">
             <div class="col-lg-8">
               <div class="accordion" id="accordionExample">
-                 <div class="accordion-item" *ngFor="let cir of course.curriculumInfo; let i=index">
+                 <div class="accordion-item" *ngFor="let cir of courseList?.curriculumInfo; let i=index">
                     <h2 class="accordion-header" id="heading{{i}}">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" aria-expanded="false" [attr.aria-controls]="'#collapse'+i">
                         <img src="assets/img/yogaicon.png" class="yogaicon">
-                        {{cir.title}}
+                        {{cir?.title}}
                       </button>
                     </h2>
                     <div id="collapse{{i}}" class="accordion-collapse collapse" [attr.aria-labelledby]="'heading'+i" data-bs-parent="#accordionExample">
@@ -122,10 +122,10 @@
    <section class="in-school daily-schedule">
     <div class="container page-section">
       <div class="row g-5 schedule-heading title">
-         <h2 class="section-title mb-5 text-left"><span>Daily Schedule</span> for {{course.coursetitle}}</h2>
+         <h2 class="section-title mb-5 text-left"><span>Daily Schedule</span> for {{courseList?.coursetitle}}</h2>
       </div>
       <div class="row g-5">
-        <div class="col-lg-6" *ngFor="let sch of course.scheduleInfo">
+        <div class="col-lg-6" *ngFor="let sch of courseList?.scheduleInfo">
             <div class="single-schedule">
               <div class="col-lg-6 schedule-data">
                 <h6>Time</h6>
@@ -149,7 +149,7 @@
       </div>
       <div class="row">
         <div class="col-md-6">
-          <div class="event-details" *ngFor="let fee of course.feeInfo">
+          <div class="event-details" *ngFor="let fee of courseList?.feeInfo">
             <div class="event-detail-heading">
               <h4 class="orange">{{fee.title}}</h4>
             </div>
@@ -174,7 +174,7 @@
                  <h4 class="orange">What is Included in Course Fees</h4>
               </div>
               <ul class="list list-two-parts by-icon-list leaf-list mt-2">
-                
+
                  <div class="col-xs-6">
                   <li><img src="assets/img/yogaicon.png" class="yogaicon">28 Days Accommodation</li>
                     <li> <img src="assets/img/yogaicon.png" class="yogaicon">1 book Yoga Mala ("by k. Pattabhi Jois")
@@ -203,7 +203,7 @@
                <p class="orange"><b>END DATE</b></p>
                <p class="orange"><b>AVAILABILITY</b></p>
             </div>
-            <div class="event-div" *ngFor="let event of course.upcomingEventInfo">
+            <div class="event-div" *ngFor="let event of courseList?.upcomingEventInfo">
                <a href="#">
                   <p>{{event.startDate}}</p>
                   <p>{{event.endDate}}</p>
@@ -232,7 +232,7 @@
             </a>
             </div>
           </div>
-          
+
           <div class=" col-lg-6">
             <div class="stu-vid-wrap">
             <a href="https://www.youtube.com/watch?v=PB3gJIpV5Po" target="_blank">
@@ -240,7 +240,7 @@
             </a>
             </div>
           </div>
-          
+
           <div class=" col-lg-6">
             <div class="stu-vid-wrap">
             <a href="https://www.youtube.com/watch?v=PB3gJIpV5Po" target="_blank">
@@ -248,7 +248,7 @@
             </a>
             </div>
           </div>
-          
+
           <div class=" col-lg-6">
             <div class="stu-vid-wrap">
             <a href="https://www.youtube.com/watch?v=PB3gJIpV5Po" target="_blank">
@@ -256,7 +256,7 @@
             </a>
             </div>
           </div>
-          
+
           <div class=" col-lg-6">
             <div class="stu-vid-wrap">
             <a href="https://www.youtube.com/watch?v=PB3gJIpV5Po" target="_blank">
@@ -264,7 +264,7 @@
             </a>
             </div>
           </div>
-          
+
           <div class=" col-lg-6">
             <div class="stu-vid-wrap">
             <a href="https://www.youtube.com/watch?v=PB3gJIpV5Po" target="_blank">
@@ -276,14 +276,14 @@
         </div>
         </div>
     </section>
-    <section class="upcoming-event">
+    <!-- <section class="upcoming-event">
       <div class="container">
         <div class="section-title title">
           <h2 class="mb-5">Frequently Asked Questions</h2>
         </div>
         <div class="row">
           <div  class="accordion" id="accordionExample">
-            <div class="accordion-item" *ngFor="let cir of course.curriculumInfo; let i=index">
+            <div class="accordion-item" *ngFor="let cir of courseList?.curriculumInfo; let i=index">
                <h2 class="accordion-header" id="heading{{i}}">
                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" aria-expanded="false" [attr.aria-controls]="'#collapse'+i">
                    <img src="assets/img/yogaicon.png" class="yogaicon">
@@ -295,22 +295,8 @@
                  </div>
                </div>
              </div>
-            <!--   <div class="accordion-item">
-               <h2 class="accordion-header" id="headingThree">
-                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                   <img src="assets/img/yogaicon.png" class="yogaicon">
-                   Classical &amp; Traditional Practice of Hatha Yoga
-
-                 </button>
-               </h2>
-               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                 <div class="accordion-body">
-                   <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                 </div>
-               </div>
-             </div> -->
            </div>
           </div>
           </div>
-      </section>
+      </section> -->
 </main>

@@ -5,29 +5,32 @@
         <div class="row">
           <div class="col-12">
             <div class="swiper sliderFeaturedPosts">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide" *ngFor="let slider of sliderList">
+              <swiper [config]="config">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide" *ngFor="let slider of sliderList">
 
-                  <a href="#">
-                    <img class="img-fluid" [lazyLoad]="imageUrl+slider.image" alt="Yoga Vidya School">
-                  </a>
+                    <a href="#">
+                      <img class="img-fluid" src="{{imageUrl+slider.image}}" alt="Yoga Vidya School">
+                    </a>
+                  </div>
+                   <!-- <div class="swiper-slide">
+                    <a href="" class="d-flex align-items-end">
+                      <img src="assets/img/slider_size_ref.jpg" >
+                    </a>
+                  </div> -->
+                  <!--
+                  <div class="swiper-slide">
+                    <a href="" class="img-bg d-flex align-items-end" style="background-image: url('assets/img/slider.png');">
+                      <div class="img-bg-inner">
+                        <h2>Slider Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
+                      </div>
+                    </a>
+                  </div> -->
+
                 </div>
-                 <!-- <div class="swiper-slide">
-                  <a href="" class="d-flex align-items-end">
-                    <img src="assets/img/slider_size_ref.jpg" >
-                  </a>
-                </div> -->
-                <!--
-                <div class="swiper-slide">
-                  <a href="" class="img-bg d-flex align-items-end" style="background-image: url('assets/img/slider.png');">
-                    <div class="img-bg-inner">
-                      <h2>Slider Heading</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore repudiandae quidem necessitatibus rem atque.</p>
-                    </div>
-                  </a>
-                </div> -->
+              </swiper>
 
-              </div>
               <div class="custom-swiper-button-next">
                 <span class="bi-chevron-right"></span>
               </div>
@@ -179,7 +182,7 @@
                         </div>
                     <!-- </div>
                     <div class="col-lg-12"> -->
-                        <div class="col-lg-3 text-center">
+                        <div class="text-center d-flex justify-content-center align-items-center">
                             <div class="master card">
 
                                     <div class="img-wrapper">
@@ -187,7 +190,7 @@
                                             <img src="assets/img/retratrishikesh.jpg" alt="Yoga Retreat Rishikesh" class="img-fluid">
                                         </a>
                                     </div>
-                                    <div class="caption-wrapper">
+                                    <div class="caption-wrapper d-flex flex-column">
                                         <div class="title">
                                             <h4>3 Days Yoga Retreat in Rishikesh</h4>
                                         </div>
@@ -206,10 +209,6 @@
                                     </div>
 
                             </div>
-                        </div>
-                        <!-- one -->
-
-                        <div class="col-lg-3 text-center">
                             <div class="master card">
 
                                     <div class="img-wrapper">
@@ -217,7 +216,7 @@
                                             <img src="assets/img/keralretreat.jpg" alt="Yoga Retreat Kerala" class="img-fluid">
                                         </a>
                                     </div>
-                                    <div class="caption-wrapper">
+                                    <div class="caption-wrapper d-flex flex-column">
                                         <div class="title">
                                             <h4>3 Days Yoga Retreat in Kerala</h4>
                                         </div>
@@ -603,13 +602,13 @@
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                   <img src="assets/img/yogaicon.png" class="yogaicon">
                                    Kerala
-                                      
+
                                 </button>
                               </h2>
                               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <img src="assets/img/kerala.jpg" class="img-fluid">
-                                    
+
                                     <div class="text-wrapper mt-4">
                                         <h3>Kerala</h3>
                                         <p>Yoga Vidya School in Kerala, noted destination for spiritual, vedic immersions, invites you to come along this sojourn of advanced yoga practices to hone your skills deepen your wisdom of the yogic art form through the 300 Hour Yoga TTC.</p>
@@ -623,7 +622,7 @@
                 </div>
             </div>
           </section>
-            
+
                     <section class="destnew d-none d-sm-block">
             <div class="container">
                 <div class="row text-center">

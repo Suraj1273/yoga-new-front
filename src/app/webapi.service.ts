@@ -6,10 +6,10 @@ import {HttpClient} from '@angular/common/http'
 })
 export class WebapiService {
   // private url = 'http://34.203.244.83:3000/';
-  private url = 'http://localhost:3000/';
-  public imageUrl = "http://localhost:3000/public/images/";
-  // private url = 'https://indiayogashala.com:3000/';
-  // public imageUrl = "https://indiayogashala.com:3000/public/images/";
+  // private url = 'http://localhost:3000/';
+  // public imageUrl = "http://localhost:3000/public/images/";
+  private url = 'https://indiayogashala.com:3000/';
+  public imageUrl = "https://indiayogashala.com:3000/public/images/";
   private youtubeApiKey = "AIzaSyBBWKHx71MmwvADlvncUc8ivZuJ0k5Wi44";
   private youtubeChannelId = "UCp8TSIgLoBWsPS1knyeFhaw";
   private videoUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&order=date&channelId=${this.youtubeChannelId}&key=${this.youtubeApiKey}&maxResults=4`;
