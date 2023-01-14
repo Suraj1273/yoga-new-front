@@ -21,7 +21,10 @@ export class IndexComponent {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     },
-    spaceBetween: 30
+    spaceBetween: 30,
+    autoplay: {
+      delay: 5000,
+    }
   };
   sliderList: any;
   imageUrl: any;

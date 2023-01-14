@@ -100,16 +100,16 @@ body{
     margin-bottom: 1rem;
 }
 .appreciation{
-    
+
 }
 .title h2{
     line-height: 70px;
 }
 .appreciation .pic-wrapper{
-    display: flex;   
+    display: flex;
     max-width: 90%;
     margin: auto;
- 
+
 }
 .appreciation .pic-wrapper .left-side{
     flex: 0 1 40%;
@@ -173,7 +173,7 @@ background: black;
     transform: scaleY(1);
      overflow: visible;
 }
-.destination .single .content{ 
+.destination .single .content{
 	overflow: hidden;
     transform: scaleY(0);
     transform-origin: bottom;
@@ -189,11 +189,11 @@ background: black;
     width: 100%;
     height: 100%;
  }
-.destination .col-lg-3:hover .img-wrap img{ 
+.destination .col-lg-3:hover .img-wrap img{
 visibility: visible;
     opacity: 0.8;
 }
-.destination .img-wrap img{ 
+.destination .img-wrap img{
     visibility: hidden;
     opacity: 0;
     }
@@ -204,16 +204,22 @@ visibility: visible;
     border-radius: 50px 0px 50px 0px;
     box-shadow: 4px 4px 10px -8px #000;
     margin: 10px;
+    max-height: 420px;
+    width:320px
 }
 .master .img-wrapper img{
     border-radius: 30px 0 30px 0;
+    height: 200px;
+    width: 310px;
 }
 .master h4{
 	font-size: 18px;
-    margin: 20px 0 10px;
+    margin: 10px 0 0px;
+    white-space: nowrap;
 }
 
 .master p{
+ margin-bottom: 0px;
 	color: orange;
     text-shadow: -1px 1px 1px #ccc;
 }
@@ -223,7 +229,7 @@ visibility: visible;
 }
 
 .master a img{
-	
+
 }
 
 .master .location img {
@@ -298,7 +304,7 @@ footer h5{
 }
 
 .hero-page{
-background: url('../img/slider.png'); 
+background: url('../img/slider.png');
     height: 500px;
     background-attachment: fixed;
     background-size: cover;
@@ -361,7 +367,7 @@ padding: 40px 30px;
     background: #f0f0f0 url(../img/header-bg.png) left top;
 }
 .header{
-     background:#f5f0e4 !important;   
+     background:#f5f0e4 !important;
 }
 .youtube-wrap {
     box-shadow: 0px 0px 10px -2px #212121;
@@ -398,7 +404,7 @@ main p{
 }
 button.accordion-button.collapsed:before{
            /* content: '';
-            background: url('../img/yogaicon.png') 
+            background: url('../img/yogaicon.png')
             no-repeat center center/cover;
             position: absolute;
             opacity: 0.3;
@@ -453,7 +459,7 @@ button.accordion-button.collapsed:before{
     transition: all 0.25s ease-in;
 }
 .destnew .left ul li:hover{
-  
+
     transition: all 0.25s ease-in;
     color: #fff;
       background: #f9751e;
@@ -472,14 +478,14 @@ width: 100%;
     background: rgb(0 0 0 / 53%);
 }
 .destnew .dest-single h3{
-    
+
     color: #fff;
 
 }
 .destnew .dest-single p{
 
     color: #fff;
-    
+
 }
 
 .list.list-two-parts {
@@ -509,7 +515,7 @@ width: 100%;
     position: relative;
     background-position: center center;
   }
-  
+
   @media (max-width: 768px) {
     .img-bg {
       height: 550px;
@@ -550,7 +556,7 @@ width: 100%;
       font-size: 30px;
       line-height: 30px;
     }
-    
+
   }
   @media only screen and (min-width : 992px) {
     .img-bg {
@@ -566,12 +572,12 @@ width: 100%;
       height: 550px;
       border-radius: 10px 0 10px 0;
     }
-    
+
     .appreciation .pic-wrapper{
         flex-direction: row;
     }
   }
-  
+
   .video-data{}
   .video-data ul{}
   .video-data ul li{
@@ -623,7 +629,7 @@ width: 100%;
  padding: 5px;
  }
  .author img {
-      
+
     }
     .author h3{
 

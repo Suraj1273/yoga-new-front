@@ -30,8 +30,8 @@ export class CourseComponent {
       "slug":slug
     }
     this.webapiService.getCourseById(data).subscribe((res:any)=>{
-      console.log(res);
-      this.courseList = res.data;
+      console.log(res.data[0].content);
+      this.courseList = res.data[0];
       this.courseName = res.data[0].coursetitle;
     })
 }
