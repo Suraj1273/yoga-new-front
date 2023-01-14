@@ -1,19 +1,27 @@
-<section
-  id="page-title"
-  class="mt-5"
->
-  <div class="container clearfix">
-    <h1>{{mentorData?.name}}</h1>
-    <span>{{mentorData?.title}}</span>
-  </div>
-</section>
-<section id="content" style="margin-bottom: 0px">
-  <div class="content-wrap" style="padding-top: 40px">
-    <div class="container clearfix">
-      <div class="col_full nobottommargin cms" [innerHTML]="mentorData?.intro | safeHtml:'html'">
+<main id="main">
 
-      </div>
-    </div>
-    <div class="clear"></div>
+  <section class="  patern-bg2 ">
+    <div class="container">
+        <div class="row master">
+            <!-- <div class="main-icon text-left">
+                <img src="assets/img/main-icon.png" alt="Not Loaded" class="img-fluid" width="300">
+            </div> -->
+            <!-- <div class="col-lg-3">
+              <img src="assets/img/master2.png" alt="Not Loaded" class="img-fluid" width="300">
+            </div> -->
+            <div class="col-lg-9">
+              <div class="heading-wrapper title text-left flex">
+                <h1>{{mentorData?.name}}</h1>
+                <p><span>{{mentorData?.title}}</span></p>
+              </div>
+            </div>
+            
+        </div>
+  <div class="row">
+    <div class="" [innerHTML]="mentorData?.intro | safeHtml:'html'"></div>
+  </div>
   </div>
 </section>
+
+
+</main>
